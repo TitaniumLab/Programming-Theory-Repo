@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.WSA;
 
-public class DefaultCharacterClass : MainCharacterClass
+public class DefaultCharacterClass : MainCharacterClass //INHERITANCE
 {
     private void Update()
     {
@@ -16,12 +16,12 @@ public class DefaultCharacterClass : MainCharacterClass
     }
 
 
-    protected override void Attack()
+    protected override void Attack() // POLYMORPHISM
     {
         StartCoroutine(WeaponSwing());
     }
 
-    private IEnumerator WeaponSwing()
+    private IEnumerator WeaponSwing() // ABSTRACTION
     {
         player.isAttacking = true;
         weapon.SetActive(true);

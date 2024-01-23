@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DataManager : MonoBehaviour
 {
-    public static DataManager Instance { get; private set; }
+    public static DataManager Instance { get; private set; } // ENCAPSULATION
 
     private int maxNameLenth = 15;
     private string _playerName;

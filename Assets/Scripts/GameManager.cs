@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
         playerName.transform.rotation = Camera.main.transform.rotation;
     }
 
-    private void SpawnNewEnemy()
+    private void SpawnNewEnemy() // ABSTRACTION
     {
         if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
         {

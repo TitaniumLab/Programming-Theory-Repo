@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
     private int _enemyCurLife;
     private int minDamage = 1;
     private int maxDamage = 3;
-    public int enemyCurLife
+    public int enemyCurLife // ENCAPSULATION
     {
         get { return _enemyCurLife; }
         set
@@ -60,7 +60,7 @@ public class Enemy : MonoBehaviour
 
 
 
-    public IEnumerator WeaponSwing()
+    public IEnumerator WeaponSwing() // ABSTRACTION
     {
         isAttacking = true;
         weapon.SetActive(true);
@@ -79,7 +79,7 @@ public class Enemy : MonoBehaviour
         isAttacking = false;
     }
 
-    public int RandomDamage()
+    public int RandomDamage() // ABSTRACTION
     {
         return Random.Range(minDamage, maxDamage + 1);
     }

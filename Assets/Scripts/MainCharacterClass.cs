@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public abstract class MainCharacterClass : MonoBehaviour
+public abstract class MainCharacterClass : MonoBehaviour //INHERITANCE
 {
-    protected int maximumLife = 20;
+    protected int maximumLife = 20; 
     protected int _currentLife = 20;
-    public int currentLife
+    public int currentLife // ENCAPSULATION
     {
         get { return _currentLife; }
         set
@@ -44,13 +44,13 @@ public abstract class MainCharacterClass : MonoBehaviour
         slider.transform.rotation = Camera.main.transform.rotation;
     }
 
-    public int RandomDamage()
+    public int RandomDamage() // ABSTRACTION
     {
         int value = Random.Range(minDamage, maxDamage + 1);
         Debug.Log($"Enemy get {value} damage.");
         return value;
     }
 
-    protected abstract void Attack();
+    protected abstract void Attack(); // POLYMORPHISM
 
 }

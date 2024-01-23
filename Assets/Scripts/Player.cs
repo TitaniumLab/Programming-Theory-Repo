@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
         SetCameraPos();
     }
 
-    protected void Movement()
+    protected void Movement() // ABSTRACTION
     {
         verticalInput = Input.GetAxis("Vertical");
         horizontalInput = Input.GetAxis("Horizontal");
@@ -46,7 +46,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    protected void SetCameraPos()
+    protected void SetCameraPos() // ABSTRACTION
     {
         Camera.main.transform.position = transform.position + offset;
         Camera.main.transform.LookAt(transform.position);
