@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
 {
     private float horizontalInput;
     private float verticalInput;
+    Vector3 offset = new Vector3(0, 12, -6);
+    public bool isAttacking = false;
 
     private NavMeshAgent agent;
 
@@ -17,7 +19,10 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        Movement();
+        if (!isAttacking)
+        {
+            Movement();
+        }
     }
 
     private void LateUpdate()
@@ -33,19 +38,16 @@ public class Player : MonoBehaviour
         {
             Vector3 moveTo = transform.position + new Vector3(horizontalInput, 0, verticalInput).normalized;
             agent.destination = moveTo;
-            Debug.Log("Move");
         }
         else if (verticalInput == 0 && horizontalInput == 0 && agent.hasPath)
         {
             Vector3 stop = transform.position;
             agent.destination = stop;
-            Debug.Log("Stop move");
         }
     }
 
     protected void SetCameraPos()
     {
-        Vector3 offset = new Vector3(0, 12, -6);
         Camera.main.transform.position = transform.position + offset;
         Camera.main.transform.LookAt(transform.position);
     }
